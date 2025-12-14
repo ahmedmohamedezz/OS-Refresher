@@ -67,6 +67,7 @@
 as controlled by a human operator. 
 
 - This mode of computing was known as **_batch processing_**, as a number of jobs were set up and then run in a “batch” by the operator.
+  - batch processing was a way to maximize expensive CPU usage by running many jobs sequentially with no user interaction.
 
 #### Protection
 
