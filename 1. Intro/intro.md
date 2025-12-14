@@ -52,3 +52,52 @@
 - data stored in RAM can be lost if power gone away, or the program crashed. so we need HW & SW to be able to store data **_persistently_**.
 
 - the sw that manages the disk is called the **_file system_**
+
+---
+
+### Milestones in OS history
+
+#### Simple libraries
+
+- in the beginning, the operating system didn’t do too much.
+
+- it was just a set of libraries of commonly-used functions
+
+- on these old mainframe systems, one program ran at a time,
+as controlled by a human operator. 
+
+- This mode of computing was known as **_batch processing_**, as a number of jobs were set up and then run in a “batch” by the operator.
+
+#### Protection
+
+-  One important aspect was the realization that code run on behalf of the OS was special; it had control of devices and thus should be treated differently than normal application code.
+
+-  imagine if you allowed any application to read from anywhere on the disk; the notion of privacy goes out the window
+
+- thus, we need to make a **_filesystem_**
+
+- instead of providing OS routines as libraries where you just make a **_procedure call_** to use them. we need to make the transition into the OS more formal, controlled process.
+
+- this where **_system calls_** jump-in.
+
+- system calls transfers control to OS in high privilaged mode called **_kernel mode_**.
+
+- applications run in **_user mode_** (hw restrict op. they can do).
+  - can't initiate I/O request to desk
+  - can't access physical memory
+  - can't send a packet on the network
+
+- system calls are initiated through a special HW instruction called **_trap_**
+
+#### Multi-programming
+
+- multiprogramming became commonplace due to the desire to make better use of machine resources.
+
+- Instead of just running one job at a time, the OS would load a number of jobs into memory and _switch_ rapidly between them, thus improving _CPU utilization_.
+
+- from this point, memory protection became important. we don't want one program to access the memory of another one.
+
+- also, we need to know how to deal with concurrency issues.
+
+
+- then overtime, mini-computers were introduced, then personal-computers (PCs). also Unix came to the world, DOS, and the early OSs. until introducing android and smart phones.
